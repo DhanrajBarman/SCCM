@@ -5,3 +5,20 @@
 1 = Enable sign in (default)
 2 = Force sign in
  
+
+
+# Disable Edge Browser Sign-in
+
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+$name = "BrowserSignin"
+$value = 0
+
+# Create registry path if it doesn't exist
+if (!(Test-Path $regPath)) {
+    New-Item -Path $regPath -Force | Out-Null
+}
+
+# Set the registry value
+New-ItemProperty -Path $regPath -Name $name -Value $value -PropertyType DWord -Force | Out-Null
+
+Write-Output "Microsoft Edge Browser Sign-in has been disabled successfully."
