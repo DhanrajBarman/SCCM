@@ -1,0 +1,7 @@
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"BrowserSignin"=dword:00000000
+ 
+0 = Disable browser sign in
+1 = Enable sign in (default)
+2 = Force sign in
+ 
